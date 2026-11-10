@@ -246,3 +246,5 @@ button{font:inherit}
   .contact-actions{flex-wrap:wrap}
 }
 @media(prefers-reduced-motion:reduce){.level-content{animation:none}}
+
+.brand{border:0;background:none;color:inherit;cursor:pointer}
