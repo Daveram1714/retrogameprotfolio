@@ -153,3 +153,96 @@ button{font:inherit}
 @media(max-width:900px){.topbar{padding:0 24px}.nav-links{gap:12px}.nav-link{font-size:7px}.top-status{display:none}.hero{padding:0 8%;height:780px}.ufo-scene{right:5%;top:13%;transform:scale(.8)}.about-grid{grid-template-columns:260px 1fr;gap:40px}.skills-grid{grid-template-columns:repeat(3,1fr)}.projects-grid{grid-template-columns:1fr 1fr}.project-card:last-child{grid-column:span 2}.project-card:last-child .project-info>p{min-height:0}}
 @media(max-width:640px){.topbar{height:66px}.brand{font-size:8px}.brand-mark{width:30px;height:30px}.mobile-menu{display:block;z-index:3}.nav-links{display:none;position:absolute;top:65px;left:0;right:0;padding:20px 24px 25px;background:#160d27;border-bottom:1px solid var(--line);flex-direction:column;gap:22px}.nav-links--open{display:flex}.nav-link{text-align:left;font-size:8px}.hero{height:790px;min-height:calc(100svh - 66px);padding:0 25px;align-items:flex-start}.hero-copy{margin-top:145px}.eyebrow{font-size:6px;margin-bottom:26px}.eyebrow-line{width:18px}.hero-kicker{font-size:7px}.hero-title{font-size:clamp(35px,11vw,58px)}.hero-subtitle{font-size:7px;margin-top:18px}.hero-description{font-size:11px;line-height:1.9}.hero-actions{gap:17px;flex-wrap:wrap}.pixel-button{min-height:48px;padding:0 15px;font-size:8px}.text-action{font-size:7px}.hero-hint{font-size:6px;margin-top:26px}.ufo-scene{right:-23px;top:20px;transform:scale(.55);transform-origin:top right}.pixel-landscape{height:33%}.hero-bottom{font-size:5px;left:18px;right:18px;bottom:17px}.hero-bottom span:nth-child(2){display:none}.game-divider{font-size:6px;gap:10px}.content-section{padding:82px 22px}.section-heading{margin-bottom:34px}.section-index{font-size:7px}.section-heading h2{font-size:clamp(22px,7vw,32px)}.about-grid{grid-template-columns:1fr;gap:38px}.profile-card{max-width:340px;width:100%;margin:auto}.avatar-frame{height:160px}.about-copy h3{font-size:32px}.about-copy>p:not(.terminal-label){font-size:11px}.stat-row{gap:24px;justify-content:space-between}.stat-row strong{font-size:17px}.stat-row small{font-size:5px}.skills-grid{grid-template-columns:repeat(2,1fr);gap:10px}.skill-card{min-height:150px;padding:13px}.skill-card h3{font-size:11px}.skill-card-top,.skill-card-bottom{font-size:5px}.section-intro{font-size:6px;line-height:1.8;margin-top:-17px}.quest-list{padding-left:24px;margin-left:5px}.quest-marker{left:-32px}.quest-content{padding:20px 16px}.quest-meta{font-size:6px}.quest-content h3{font-size:19px}.quest-content h4{font-size:8px}.quest-content p,.quest-content li{font-size:10px}.projects-grid{grid-template-columns:1fr;gap:16px}.project-card:last-child{grid-column:auto}.project-info>p{min-height:0}.project-art{height:170px}.contact-section{padding:85px 20px 0;min-height:560px}.contact-section h2{font-size:clamp(25px,8vw,42px)}.contact-section>p{font-size:10px}.contact-actions{gap:10px;margin-bottom:75px}.contact-footer{gap:13px;flex-wrap:wrap;justify-content:center;font-size:5px}.contact-footer span:nth-child(2){display:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+
+/* Multi-screen arcade navigation */
+.mobile-level-menu{display:none}
+.level-screen{min-height:calc(100svh - 78px);max-width:1180px;margin:0 auto;padding:30px 32px 70px;display:flex;flex-direction:column}
+.level-screen__topline{display:flex;justify-content:space-between;color:#88769c;font:7px var(--pixel);letter-spacing:.5px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.level-heading{margin:56px 0 38px}
+.level-heading h1{font:clamp(27px,4.5vw,48px)/1.35 var(--pixel);letter-spacing:-1.5px;margin:0;text-shadow:0 4px 0 #4b2b6c}
+.level-subtitle{font:8px var(--pixel);color:#a99ab9;letter-spacing:.5px;line-height:2;margin-top:17px}
+.level-content{flex:1;min-height:360px;animation:level-enter .32s ease both}
+@keyframes level-enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.level-navigation{display:grid;grid-template-columns:1fr minmax(150px,260px) 1fr;align-items:center;gap:20px;border-top:1px solid var(--line);padding-top:25px;margin-top:55px}
+.level-nav-actions{display:flex;justify-content:flex-end;gap:10px}
+.level-nav-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#211334;border:1px solid #60437b;color:#cbb9dc;padding:12px 14px;font:7px var(--pixel);cursor:pointer;transition:.2s}
+.level-nav-button:hover:not(:disabled){border-color:var(--pink);color:var(--pink);box-shadow:0 0 16px #feb0dc22}
+.level-nav-button:disabled{opacity:.3;cursor:not-allowed}
+.level-nav-button--next{background:var(--pink);border-color:#fff0fa;color:#29102e}
+.level-nav-button--next:hover{color:#29102e!important;box-shadow:0 0 18px #feb0dc55!important}
+.level-progress__labels{display:flex;justify-content:space-between;color:#9b89ad;font:6px var(--pixel);margin-bottom:10px}
+.level-progress__track{display:flex;gap:5px}
+.level-progress__step{height:6px;flex:1;border:0;background:#38244d;padding:0;cursor:pointer}
+.level-progress__step.is-done{background:var(--pink);box-shadow:0 0 9px #feb0dc66}
+.arcade-footer{max-width:1180px;margin:auto;padding:22px 32px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;color:#847391;font:6px var(--pixel)}
+.arcade-footer button{border:0;background:none;color:var(--pink);font:inherit;cursor:pointer}
+.filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
+.filter-chip{border:1px solid #4d3564;background:#1b102d;color:#a998bb;padding:9px 11px;font:6px var(--pixel);cursor:pointer;transition:.2s}
+.filter-chip:hover,.filter-chip.is-active{border-color:var(--pink);color:var(--pink);background:#321b40}
+.skills-grid--interactive .skill-card{width:100%;text-align:left;color:inherit;cursor:pointer}
+.skill-card--selected{border-color:var(--pink)!important;box-shadow:0 0 20px #feb0dc20}
+.detail-panel{margin-top:22px;padding:24px 26px;background:linear-gradient(110deg,#29183d,#1b102d);border:1px solid #825c9d;box-shadow:5px 5px 0 #0b0614;animation:level-enter .2s ease both}
+.detail-panel__eyebrow{font:7px var(--pixel);color:var(--cyan);letter-spacing:.5px}
+.detail-panel h3{font:700 22px var(--sans);margin:13px 0 8px}
+.detail-panel p{font:11px/1.8 var(--mono);color:#b9a9c8}
+.detail-panel__status{font:7px var(--pixel);color:#8affb4}
+.interaction-hint{font:6px var(--pixel);color:#877598;letter-spacing:.5px;margin:22px 0 0}
+.quest-card--expanded .quest-content{padding:35px}
+.quest-achievements{margin-top:27px;padding-top:20px;border-top:1px solid var(--line);display:grid;gap:13px}
+.quest-achievements>span{font:7px var(--pixel);color:var(--pink);margin-bottom:4px}
+.quest-achievements div{display:flex;align-items:flex-start;gap:10px;color:#b9a9c8;font:11px/1.7 var(--mono)}
+.quest-achievements svg{flex:none;color:#8affb4;margin-top:2px}
+.experience-footnote{font:7px var(--pixel);color:#8d7a9f;margin:28px 0 0 35px}
+.projects-grid--interactive .project-card{width:100%;text-align:left;color:inherit;cursor:pointer;padding:0}
+.projects-grid--interactive .project-info>p{min-height:100px}
+.project-open-hint{display:block;margin-top:17px;color:var(--pink);font:6px var(--pixel)}
+.project-modal-backdrop{position:fixed;inset:0;z-index:60;background:#080510d9;backdrop-filter:blur(8px);display:grid;place-items:center;padding:20px;animation:fade-in .2s ease}
+@keyframes fade-in{from{opacity:0}to{opacity:1}}
+.project-modal{width:min(100%,650px);max-height:85svh;overflow:auto;position:relative;padding:34px;background:#1b102d;border:1px solid #986bb4;box-shadow:9px 9px 0 #080510,0 0 55px #b47be933}
+.project-modal__close{position:absolute;right:16px;top:16px;border:1px solid #694b81;background:#28173c;color:#fff;padding:8px;cursor:pointer}
+.project-modal h3{font:700 27px var(--sans);margin:18px 0 10px}
+.project-modal>p,.case-study-block p{font:11px/1.9 var(--mono);color:#b9a9c8}
+.case-study-block{padding:16px 0;border-top:1px solid var(--line)}
+.case-study-block>span{font:7px var(--pixel);color:var(--pink)}
+.case-study-block p{margin-bottom:0}
+.contact-level{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:410px}
+.contact-orbit{color:var(--purple);font-size:22px;letter-spacing:18px;opacity:.7}
+.contact-level h3{font:clamp(28px,5vw,54px)/1.4 var(--pixel);margin:20px 0;text-shadow:0 4px 0 #5d0a9d}
+.contact-level h3 span{color:var(--pink)}
+.contact-level>p{font:12px/2 var(--mono);color:#b9a9c8;max-width:560px}
+.contact-note{display:flex;align-items:center;gap:8px;color:var(--cyan)!important;font:7px var(--pixel)!important;margin-top:30px}
+@media(max-width:900px){.level-screen{padding-left:24px;padding-right:24px}.level-navigation{grid-template-columns:1fr 1fr}.level-progress{grid-column:1/-1;grid-row:1}.level-nav-actions{justify-content:flex-end}}
+@media(max-width:640px){
+  .topbar{height:66px}.topbar .nav-links{display:none}
+  .mobile-level-menu{display:block;position:relative;z-index:25;background:#160d27;border-bottom:1px solid var(--line);padding:0 22px}
+  .mobile-level-menu summary{list-style:none;display:flex;align-items:center;gap:9px;padding:13px 0;color:var(--pink);font:7px var(--pixel);cursor:pointer}
+  .mobile-level-menu summary::-webkit-details-marker{display:none}
+  .mobile-level-menu__items{display:grid;gap:14px;padding:4px 0 18px}
+  .mobile-level-menu__items .nav-link{text-align:left;font-size:7px}
+  .level-screen{min-height:calc(100svh - 110px);padding:22px 20px 55px}
+  .level-screen__topline{font-size:5px}
+  .level-heading{margin:38px 0 27px}
+  .level-heading h1{font-size:clamp(21px,7vw,31px)}
+  .level-subtitle{font-size:6px;line-height:1.9}
+  .level-content{min-height:300px}
+  .level-navigation{gap:12px;margin-top:38px;padding-top:18px}
+  .level-nav-button{font-size:5px;padding:11px 8px;gap:5px}
+  .level-nav-button svg{width:12px;height:12px}
+  .level-progress__labels{font-size:5px}
+  .arcade-footer{padding:18px 20px;flex-wrap:wrap;justify-content:center;font-size:5px}
+  .filter-chip{font-size:5px;padding:8px}
+  .detail-panel{padding:18px}
+  .detail-panel h3{font-size:19px}
+  .detail-panel p{font-size:10px}
+  .quest-card--expanded .quest-content{padding:20px 15px}
+  .quest-achievements div{font-size:10px}
+  .experience-footnote{font-size:5px;margin-left:24px}
+  .project-modal{padding:27px 20px}
+  .project-modal h3{font-size:22px}
+  .project-modal>p,.case-study-block p{font-size:10px}
+  .contact-level h3{font-size:clamp(23px,8vw,37px)}
+  .contact-level>p{font-size:10px}
+  .contact-actions{flex-wrap:wrap}
+}
+@media(prefers-reduced-motion:reduce){.level-content{animation:none}}
