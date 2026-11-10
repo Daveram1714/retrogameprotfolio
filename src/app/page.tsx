@@ -8,7 +8,6 @@ import {
   Code2,
   Github,
   Linkedin,
-  Mail,
   Menu,
   Monitor,
   Rocket,
@@ -146,7 +145,7 @@ export default function Home() {
         <span className="top-status"><span className="status-light" /> PLAYER ONLINE</span>
       </header>
 
-      <section className="hero" aria-label="Welcome screen">
+      <section className={`hero ${started ? "hero--started" : ""}`} aria-label="Welcome screen">
         <div className="hero-stars" aria-hidden="true">
           {Array.from({ length: 34 }, (_, i) => (
             <i key={i} style={{ left: `${(i * 37 + 7) % 100}%`, top: `${(i * 53 + 11) % 78}%`, animationDelay: `${(i % 7) * 0.4}s` }} />
