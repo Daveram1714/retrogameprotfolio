@@ -1,6 +1,6 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { levels } from "@/data/portfolio";
 
 type TopBarProps = {
@@ -28,7 +28,7 @@ export function TopBar({ activeLevel, onNavigate, onHome }: TopBarProps) {
   );
 }
 
-export function MobileLevelMenu({ activeLevel, onNavigate }: TopBarProps) {
+export function MobileLevelMenu({ activeLevel, onNavigate }: Pick<TopBarProps, "activeLevel" | "onNavigate">) {
   return (
     <details className="mobile-level-menu">
       <summary aria-label="Open level menu"><Menu size={16} /> LEVEL SELECT</summary>
